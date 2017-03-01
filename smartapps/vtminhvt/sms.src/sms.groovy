@@ -19,9 +19,9 @@ definition(
     author: "Vo Thanh Minh",
     description: "G\u1EEDi tin nh\u1EAFn",
     category: "Convenience",
-    iconUrl: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience.png",
-    iconX2Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png",
-    iconX3Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png")
+     iconUrl: "https://s3.amazonaws.com/vtmsmartthings/vtms60.png",
+    iconX2Url: "https://s3.amazonaws.com/vtmsmartthings/vtms120.png",
+    iconX3Url: "https://s3.amazonaws.com/vtmsmartthings/vtms120.png")
 
 
 preferences {
