@@ -20,7 +20,7 @@ preferences
     {
         input("presenceNguyen","capability.presenceSensor",title:"Cảm biến hiện diện Nguyên")
         input("presenceNguyeniPhone","capability.presenceSensor",title:"iPhone của Nguyen")
-    }  
+    }//  
 }
 def installed() 
 {

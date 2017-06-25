@@ -33,6 +33,7 @@ preferences
     {
         input("motionCD", "capability.motionSensor",title:"Chọn CB Chuyển động")
     }
+    //
 }
 def installed() 
 {
@@ -67,6 +68,7 @@ def motion_CD(evt)
             sw1.on()
             def timeP=timeofP*60
             runIn(timeP,lightOFF)
+            //
 		}
 	}	
 	else
@@ -88,4 +90,3 @@ def lightOFF()
     	sw1.off()
     }   
 }
-
