@@ -18,8 +18,8 @@ preferences
 
     section("Cảm biến hiện diện")
     {
-        input("presenceNguyen","capability.presenceSensor",title:"Cảm biến hiện diện Nguyên")
-        input("presenceNguyeniPhone","capability.presenceSensor",title:"iPhone của Nguyen")
+        input("presence","capability.presenceSensor",title:"Cảm biến hiện diện")
+        input("iPhone","capability.presenceSensor",title:"iPhone của bạn")
     }//  
 }
 def installed() 
@@ -34,37 +34,37 @@ def updated()
 
 def init()
 {
-    subscribe(presenceNguyen,"presence",presence_Nguyen)
-    subscribe(presenceNguyeniPhone,"presence",presence_NguyeniPhone)
+    subscribe(presence,"presence",presence_)
+    subscribe(iPhone,"presence",iPhone_)
 }
 
-def presence_Nguyen(evt)
+def presence_(evt)
 {
 	if (sel=="on")
 	{
         if(evt.value=="present")
         {
-            thongbao("[Present]Chào bạn đã về Nhà! ")
+            thongbao("Chào bạn đã về Nhà! ")
         }
 
         if(evt.value=="not present")
         {
-            thongbao("[Present]Bạn đã rời khỏi Nhà!")
+            thongbao("Bạn đã rời khỏi Nhà!")
         }
    } 
 }
 
-def presence_NguyeniPhone(evt)
+def iPhone_(evt)
 {
 	if (sel=="on")
     {
 		if(evt.value=="present")
 		{
-        	thongbao("[iPhone]Chào bạn đã về Nhà! ")
+        	thongbao("Chào bạn đã về Nhà! ")
 		}
 		if(evt.value=="not present")
 		{
-    		thongbao("[iPhone]Bạn đã rời khỏi Nhà!")
+    		thongbao("Bạn đã rời khỏi Nhà!")
 		}
 	}
 }
