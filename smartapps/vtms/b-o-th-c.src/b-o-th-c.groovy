@@ -1,7 +1,7 @@
 definition(
     name: "Báo thức",
-    namespace: "vtms",
-    author: "vtminhvt",
+    namespace: "VTMS",
+    author: "Võ Thanh MInh",
     description: "Kịch bản điều khiển thiết bị dựa vào thói quen, sở thích và mệnh lệnh",
     category: "Safety & Security",
     iconUrl: "https://s3.amazonaws.com/vtmsmartthings/vtms60.png",
@@ -11,7 +11,7 @@ definition(
 
 preferences {
 	
-section("Chọn Hẹn giờ hoặc tắt")
+section("Kích hoạt kịch bản")
 {
 	input name:"chon",type:"enum", title:"Hẹn giờ", options: ["on","off"], defaulValue:"off"
 }
@@ -25,9 +25,9 @@ section("Giờ hẹn ")
      input name: "timeofP", type: "number", title: "Báo thức trong bao lâu(giây)?", defaultValue:"1"
     } 
     
-section("Báo động Nhà")
+section("Chọn thiết bị âm thanh")
     {
-    	input("alamH","capability.alarm",title:"Báo động ở Nhà")
+    	input("alamH","capability.alarm",title:"Loa báo động")
     }
 }
 def installed() 
