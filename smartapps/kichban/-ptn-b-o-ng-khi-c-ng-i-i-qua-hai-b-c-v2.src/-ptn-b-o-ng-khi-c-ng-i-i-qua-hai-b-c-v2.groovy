@@ -99,8 +99,6 @@ def motion_CD(evt)
             	sendPush("Báo động bước 1, Kiểu ${typ1} ${evt.displayName} là ${evt.value} ")
                if(typ1=="L") { alamH.strobe()}
                if(typ1=="A") {alamH.siren()}
-               if(typ1=="AL") { alamH.both()}  
-              // schedule(now()+p1,alamF) // turn off in 10 second
                schedule(now()+pp1,laplai) // loop again in p second
     		}
     	}
@@ -121,7 +119,6 @@ def laplai()
     	sendPush("Báo động bước 2, Kiểu ${typ2}")
         if(typ2=="L") {alamH.strobe()}
         if(typ2=="A") {alamH.siren()}
-        if(typ2=="AL") {alamH.both()}  
         schedule(now() + p2,alamF)
     }
      
@@ -133,22 +130,3 @@ def alamF()
     
 }
 
-def alam_H(evt)
-{
-  if (evt.value == "strobe") 
-  	{
-    	sendPush("[PTN]Báo động đang nhấp nháy đèn")
-  	} 
-  	if (evt.value == "siren") 
-  	{
-    	sendPush( "[PTN]Báo động đang phát âm thanh")
-  	}
-  	if (evt.value == "both") 
-  	{
-    	sendPush ("[PTN]Báo động đang phát đèn và âm thanh")
-  	}
-  	if (evt.value == "off") 
-  	{
-    	sendPush("[PTN]Đã tắt báo động")
-  	}
-}

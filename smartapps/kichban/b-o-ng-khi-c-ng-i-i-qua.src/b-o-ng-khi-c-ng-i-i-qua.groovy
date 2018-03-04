@@ -17,7 +17,7 @@ preferences
     	}
     section("Kiểu báo động")
     	{
-       		 input name:"typ",type:"enum", title:"Chọn kiểu báo động", options: ["A","L","AL"], defaultValue:"L"
+       		 input name:"typ",type:"enum", title:"Chọn kiểu báo động", options: ["A","L"], defaultValue:"L"
     	}
     section("Chọn khoảng thời gian")
         {
@@ -54,10 +54,7 @@ def init()
 	subscribe(motionCD,"motion",motion_CD)
   	subscribe(alamH,"alarm",alam_H) 
 }
-def initialize() 
-{ 
 
-}
 
 def motion_CD(evt)
 {
@@ -76,9 +73,8 @@ def motion_CD(evt)
             {
                 if(typ=="L") alamH.strobe()
                 if(typ=="A") alamH.siren()
-                if(typ=="AL") alamH.both()
                 schedule(now()+p,alamF) // turn off in 10 second
-                sendPush("[Nhà]Báo động do phát hiện chuyển động")
+                sendPush(" ${evt.displayName}: đã phát hiện chuyển động")
             }
     }
 }

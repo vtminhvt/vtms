@@ -93,54 +93,8 @@ def cb()
         {
            sendPush("Trạng thái: Vẫn còn cửa chưa đóng, hãy kiểm tra lại. \n Cửa chính ${t1} \n Cửa T2 ${t2} \n Cửa T3 ${t3} \n Cửa T4 ${t4} \n Cửa T4s ${t4s}")
             def t_l=tl*1000
-            schedule(now()+t_l,cb2)
-
-        }
-        else
-        {
-            sendPush("Trạng thái: Nhà của bạn đã an toàn!")
-        }
-    }
-}
-def cb2()
-{
-	def t_p=tp*1000
-    if (sel=="on")
-    {
-
-        def cs1=(csCC.currentValue("contact")=="closed")
-        def cs2=(csT2.currentValue("contact")=="closed")
-        def cs3=(csT3.currentValue("contact")=="closed")
-        def cs4=(csT4.currentValue("contact")=="closed")
-        def cs4s=(csT4s.currentValue("contact")=="closed")
-        
-         def t1=csCC.currentValue("contact")
-        def t2=csT2.currentValue("contact")
-        def t3=csT3.currentValue("contact")
-        def t4=csT4.currentValue("contact")
-        def t4s=csT4s.currentValue("contact")    
-
-        if (! (cs1 && cs2 && cs3 && cs4 && cs4s))
-        {
-          sendPush("Trạng thái: Vẫn còn cửa chưa đóng, hãy kiểm tra lại. \n Cửa chính ${t1} \n Cửa T2 ${t2} \n Cửa T3 ${t3} \n Cửa T4 ${t4} \n Cửa T4s ${t4s}")
            
-            if(typ=="L") 
-            {
-        		sendPush("Báo động do phát hiện cửa vẫn còn mở")
-           		alamH.strobe()
-        	}
-            if(typ=="A")
-            {
-        		sendPush("Báo động do phát hiện cửa vẫn còn mở")
-        		alamH.siren()
-            	
-        	}
-        	if(typ=="AL")
-        	{
-        		sendPush("Báo động do phát hiện cửa vẫn còn mở")
-        		alamH.both()
-        	}
-             schedule(now()+t_p,tatBD)
+
         }
         else
         {

@@ -87,7 +87,7 @@ def cs_1(evt)
     {
         if (dk1 || dk2)
         {
-        	     sendPush("Báo động bước 1, Kiểu báo động ${typ1}, Lý do:${evt.displayName} phát hiện bị mở.")
+        	     sendPush("Báo động: Kiểu báo động ${typ1}, Lý do:${evt.displayName} phát hiện bị mở.")
            
            if(typ1=="L") 
             {
@@ -101,12 +101,7 @@ def cs_1(evt)
         		schedule(now()+p1,alamF) // turn off in 10 second
                 schedule(now()+p+p1,laplai)
         	}
-        	if(typ1=="AL")
-        	{	
-        		alamH.both()
-           		schedule(now()+p1,alamF) // turn off in 10 second
-                schedule(now()+p+p1,laplai)
-        	}
+        	
 		}
 	    }
  }
@@ -133,12 +128,7 @@ def laplai()
         		schedule(now()+p2,alamF) // turn off in 10 second
     
         	}
-        	if(typ2=="AL")
-        	{	
-        		alamH.both()
-           		schedule(now()+p2,alamF) // turn off in 10 second
-    
-        	}
+        	
 	}
 }
 def alamF()
